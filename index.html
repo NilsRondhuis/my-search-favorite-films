@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Search Favorite Films</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+    <h1 class="title">My Search Favorite Films</h1>
+
+    <ul class="list filter-list">
+        <li class="item">
+            <button class="btn filter-btn">Upcoming</button>
+        </li>
+        <li class="item">
+            <button class="btn filter-btn">Top Rated</button>
+        </li>
+        <li class="item">
+            <button class="btn filter-btn">Popular</button>
+        </li>
+        <li class="item">
+            <button class="btn filter-btn">Now Playing</button>
+        </li>
+    </ul>
+
+    <div class="container">
+        <ul class="list film-list">
+            <!-- <li class="item">
+                <div class="img">
+                    <img src="./img/default.png" alt="">
+                </div>
+                <div class="content">
+                    <h2 class="film-title">The Bad Guys</h2>
+                    <p class="info"><span class="title-info">Rating: </span>9.6</p>
+                    <p class="info"><span class="title-info">Realease date: </span>2022-03-17</p>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+
+    <div class="btn-loading-container">
+        <button class="btn btn-loading visually-hidden">Loading Else</button>
+    </div>
+
+    <script src="./js/app.js" type="module"></script>
+    <!-- <script src="./js/fetchApi.js" type="module"></script> -->
 </body>
 </html>
