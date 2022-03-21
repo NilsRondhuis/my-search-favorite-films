@@ -9,43 +9,49 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1 class="title">My Search Favorite Films</h1>
+    <main>
+        <div class="container">
+            <h1 class="title">My Search Favorite Films</h1>
 
-    <ul class="list filter-list">
-        <li class="item">
-            <button class="btn filter-btn">Upcoming</button>
-        </li>
-        <li class="item">
-            <button class="btn filter-btn">Top Rated</button>
-        </li>
-        <li class="item">
-            <button class="btn filter-btn">Popular</button>
-        </li>
-        <li class="item">
-            <button class="btn filter-btn">Now Playing</button>
-        </li>
-    </ul>
+            <ul class="list filter-list">
+                <li class="item">
+                    <button class="filter-btn">Upcoming</button>
+                </li>
+                <li class="item">
+                    <button class="filter-btn">Top Rated</button>
+                </li>
+                <li class="item">
+                    <button class="filter-btn">Popular</button>
+                </li>
+                <li class="item">
+                    <button class="filter-btn">Now Playing</button>
+                </li>
+            </ul>
+        
+            <ul class="list film-list">
+                    <!-- <li class="item">
+                        <div class="img">
+                            <img src="./img/default.png" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-container">
+                                <h2 class="film-title">The Bad Guys</h2>
+                            </div>
+                            <p class="info"><span class="title-info">Rating: </span>9.6</p>
+                            <p class="info"><span class="title-info">Realease date: </span>2022-03-17</p>
+                        </div>
+                    </li> -->
+            </ul>
+        
+            <div class="btn-loading-container">
+                <button class="btn-loading visually-hidden">Loading Else</button>
+            </div>
+        </div>
+    </main>
 
-    <div class="container">
-        <ul class="list film-list">
-            <!-- <li class="item">
-                <div class="img">
-                    <img src="./img/default.png" alt="">
-                </div>
-                <div class="content">
-                    <h2 class="film-title">The Bad Guys</h2>
-                    <p class="info"><span class="title-info">Rating: </span>9.6</p>
-                    <p class="info"><span class="title-info">Realease date: </span>2022-03-17</p>
-                </div>
-            </li> -->
-        </ul>
-    </div>
-
-    <div class="btn-loading-container">
-        <button class="btn btn-loading visually-hidden">Loading Else</button>
-    </div>
+    <button class="btn-up visually-hidden">^</button>
 
     <script src="./js/app.js" type="module"></script>
-    <!-- <script src="./js/fetchApi.js" type="module"></script> -->
+    <script src="./js/btnUp.js" type="module"></script>
 </body>
 </html>

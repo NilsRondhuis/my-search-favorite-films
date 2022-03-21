@@ -5,6 +5,7 @@ export default class ApiService {
     fetchMovies(param) {
         const queryParams = new URLSearchParams({
             api_key: '288d413468bcdb13681c080a523b13ad',
+            // language: 'ru-RU',
             page: this.#page,
         });
 

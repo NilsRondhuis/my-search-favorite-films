@@ -57,9 +57,11 @@ function renderListFilm(data) {
             <img src="${IMG_URL}/${el.poster_path}" alt="${el.title}">
           </div>
           <div class="content">
-            <h2 class="film-title">${el.title}</h2>
-            <p class="info"><span class="title-info">Rating: </span>${el.vote_average}</p>
-            <p class="info"><span class="title-info">Realease date: </span>${el.release_date}</p>
+            <div class="title-container">
+              <h2 class="film-title">${el.title}</h2>
+            </div>
+            <p class="info"><span class="title-info">Rating:</span> ${el.vote_average}</p>
+            <p class="info"><span class="title-info">Realease date:</span> ${el.release_date}</p>
           </div>
         </li>
         `;
