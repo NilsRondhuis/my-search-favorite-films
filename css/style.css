@@ -71,6 +71,9 @@ img {
     transition: background-color 250ms ease;
     cursor: pointer;
 }
+.active-btn {
+    background-color: #57ebeb;
+}
 .filter-btn:hover,
 .filter-btn:focus {
     background-color: #57ebeb;

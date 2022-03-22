@@ -13,34 +13,32 @@ function onClickFilter(e) {
     if (e.target.nodeName !== 'BUTTON') {
         return;
     }
+    handleActiveBtn(e.target);
+
     const param = snakeCaseString(e.target.textContent);
     staticParam = param;
 
-    if (param === param) {
-        refs.filmList.innerHTML = '';
-    }
+    resetPage();
+    resetCounter();
 
-    counter = 1;
-    api.page = counter;
-    
     api.fetchMovies(param)
     .then(data => {
-        console.log(data);
-        refs.loadBtn.classList.remove('visually-hidden');
         refs.filmList.insertAdjacentHTML('beforeend', renderListFilm(data));
+        refs.loadBtn.classList.remove('visually-hidden');
     })
-    .catch(err => console.log(err));
+    .catch(handleError);
 }
 
 function onClickLoadElse() {
-    counter += 1;
-    api.page = counter;
+    incrementCounter(counter);
+    handleDisabledBtn(refs.loadBtn);
+
     api.fetchMovies(staticParam)
     .then(data => {
-        console.log(data);
         refs.filmList.insertAdjacentHTML('beforeend', renderListFilm(data));
+        handleEnabledBtn(refs.loadBtn);
     })
-    .catch(err => console.log(err));
+    .catch(handleError);
 } 
 
 function snakeCaseString(str) {
@@ -66,4 +64,42 @@ function renderListFilm(data) {
         </li>
         `;
     }).join('');
+}
+
+function handleError(error) {
+    console.log(error);
+    resetPage();
+}
+
+function handleDisabledBtn(btn) {
+    btn.disabled = true;
+    btn.textContent = 'Loading...';
+}
+
+function handleEnabledBtn(btn) {
+    btn.disabled = false;
+    btn.textContent = 'Load More';
+}
+
+function resetCounter() {
+    counter = 1;
+    api.page = counter;
+}
+
+function incrementCounter() {
+    counter += 1;
+    api.page = counter;
+}
+
+function resetPage() {
+    refs.loadBtn.classList.add('visually-hidden');
+    refs.filmList.innerHTML = '';
+}
+
+function handleActiveBtn(target) {
+    const isActiveBtn = document.querySelector('.active-btn');
+    if (isActiveBtn) {
+        isActiveBtn.classList.remove('active-btn')
+    }
+    target.classList.add('active-btn');
 }
